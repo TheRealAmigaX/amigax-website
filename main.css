@@ -1,19 +1,49 @@
 html {
     background: fixed linear-gradient(#213264, #55F9FF);
+
 }
 
 body {
-    margin: 25px;
+    margin: 30px;
     font-family: 'Quicksand', sans-serif;
 }
 
-h1 {
+.container {
     color: #fff;
     text-align: center;
-    font-size: 50px;
+    font-size: 40pt;
     border: 10px solid #00000000;
     border-radius: 5px;
     background: #00000055;
     padding: 5px;
     filter: drop-shadow(5px 5px 5px #000);
+    margin: 10px;
+    overflow: auto;
+}
+
+.material-symbols-outlined {
+    margin: -5px;
+    font-size: 50pt;
+    line-height: 90px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition-duration: 0.5s;
+}
+
+a:hover {
+    color: #a1ebff;
+}
+
+h4,h6 {
+    text-align: left;
+    margin: 5px;
+}
+
+.h7 {
+    font-size: 20pt;
+    text-align: left;
+    margin: 5px;
 }
