@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
 html {
     background: url(resources/tile.png);
     user-select: none;
@@ -8,7 +10,8 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-.container {
+.container,
+.menu {
     color: #000;
     text-align: center;
     font-size: 40pt;
@@ -17,32 +20,44 @@ body {
     border-image: url(resources/window.png) 55 round;
     filter: drop-shadow(3px 3px 5px #000000aa);
     margin: 50px;
+    padding: 10px;
     overflow: hidden;
 }
 
-.container:hover {
+.container:hover,
+.menu:hover {
     border-image: url(resources/windowActive.png) 55 round;
+}
+
+.menu img {
+    width: 100px;
+    transition: .3s;
+    transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+}
+
+.menu img:hover {
+    width: 100px;
+    transform: translate(-5px, -5px);
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.233));
+}
+
+.menu img:active {
+    width: 100px;
+    transform: translate(-2px, -2px);
+    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.233));
+}
+
+.container a {
+    transition: .2s;
+}
+
+.container a:hover {
+    filter: drop-shadow(0 0 5px black);
 }
 
 .picture {
     display: inline-block;
     margin: 5px;
-}
-
-.material-symbols-outlined {
-    margin: -5px;
-    font-size: 50pt;
-    line-height: 90px;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-    transition-duration: .2s;
-}
-
-a:hover {
-    transform: scale(1.2);
 }
 
 .label {
