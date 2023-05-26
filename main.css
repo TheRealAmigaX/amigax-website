@@ -84,3 +84,148 @@ h6 {
     text-align: left;
     margin: 5px;
 }
+
+/* i might have to learn more about the grid container.. */
+.card {
+    margin: auto;
+    border: 2px solid #00000022;
+    border-radius: 15px;
+    padding: 20px;
+    width: 900px;
+    display: grid;
+    gap: 7px;
+    grid-auto-flow: column;
+    grid-template-columns: auto 15px auto;
+    grid-template-rows: 60px 340px 15px;
+    grid-template-areas:
+        "name vert_decor trophy"
+        "description vert_decor trophy"
+        "hori_decor vert_decor .";
+}
+
+.name {
+    font-size: 45px;
+    margin: 0;
+}
+
+.description {
+    grid-area: description;
+    background: radial-gradient(#222, #111);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: left;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #fff;
+    padding: 24px;
+}
+
+.hori_decor,
+.vert_decor {
+    background: #00000033;
+    border-radius: 10px;
+}
+
+.hori_decor {
+    grid-area: hori_decor;
+}
+
+.vert_decor {
+    grid-area: vert_decor;
+}
+
+#spritesheet {
+    margin: auto;
+    /* default width for spritesheet */
+    width: 290px;
+    height: 400px;
+}
+
+.trophy {
+    grid-area: trophy;
+    background: radial-gradient(#222, #111);
+    width: 400px;
+    border-radius: 10px;
+}
+
+.info {
+    display: inline-block;
+    border: 2px solid #00000022;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 24px;
+    text-align: left;
+    width: 45%;
+    margin: 5px;
+}
+
+.character {
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+/* styling a slider is not quite straightforward. some code was taken from w3schools */
+#slider,
+#evilslider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    margin: 0;
+    background: #00000033;
+    border-radius: 10px;
+}
+
+/* Good guys' slider */
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #14e930;
+    cursor: grab;
+    border: 1px solid #0f9722;
+    border-radius: 10px;
+}
+
+#slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #14e930;
+    cursor: grab;
+    border: 1px solid #0f9722;
+    border-radius: 10px;
+}
+
+/* Bad guys' slider */
+
+#evilslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #e91414;
+    cursor: grab;
+    border: 1px solid #970f0f;
+    border-radius: 10px;
+}
+
+#evilslider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #e91414;
+    cursor: grab;
+    border: 1px solid #970f0f;
+    border-radius: 10px;
+}
+
+#slider::-webkit-slider-thumb:active,
+#evilslider::-webkit-slider-thumb:active {
+    cursor: grabbing;
+}
+
+#slider::-moz-range-thumb:active,
+#evilslider::-moz-range-thumb:active {
+    cursor: grabbing;
+}
