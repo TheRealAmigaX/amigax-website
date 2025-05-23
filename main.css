@@ -1,160 +1,207 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@font-face { 
+  font-family: 'TopazPlus';
+  src: url('resources/TopazPlus_a1200_v1.0.woff') format('woff');
+}
 
 html {
-    background: url(resources/tile.png);
-    user-select: none;
+  background: url(resources/tile.png);
+  user-select: none;
 }
 
 body {
-    margin: 30px;
-    font-family: 'Quicksand', sans-serif;
+  margin: 30px;
+  font-family: 'TopazPlus', sans-serif;
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: left;
+  margin: 5px;
+}
+
+hr {
+  border: none;
+  background-color: #00000022;
+  margin: 5px;
+  padding: 1px;
+}
+
+p {
+  font-size: 20pt;
+}
+
+footer {
+  font-size: 24px;
+}
+
+#modal {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #000000cc;
+}
+
+#modal_img {
+  width: 100%;
+  height: 100%;
+  background-image: url(resources/2025art/lopoly_pavlova.png);
+  background-position-x: center;
+  background-position-y: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#alt_txt {
+  font-size: 16pt;
+  padding: 16px;
+  background: #000;
+  color: #fff;
+}
+
+#close {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
 }
 
 .container,
 .menu {
-    width: fit-content;
-    color: #000;
-    text-align: center;
-    font-size: 40pt;
-    background: #f1eee9;
-    border: 55px solid;
-    border-image: url(resources/window.png) 55 round;
-    box-shadow: 3px 3px 10px #000000aa;
-    margin: 50px;
-    padding: 10px;
-    overflow: hidden;
+  width: fit-content;
+  color: #000;
+  font-size: 32pt;
+  background: #f1eee9;
+  border: 55px solid;
+  border-image: url(resources/window.png) 55 round;
+  box-shadow: 3px 3px 10px #000000aa;
+  margin: 50px;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .container:hover,
 .menu:hover {
-    border-image: url(resources/windowActive.png) 55 round;
+  border-image: url(resources/windowActive.png) 55 round;
+}
+
+.menu {
+  text-align: center;
 }
 
 .menu img {
-    width: 100px;
-    transition: .3s;
-    transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+  width: 128px;
+  margin-right: 15px;
 }
 
 .menu img:hover {
-    width: 100px;
-    transform: translate(-5px, -5px);
-    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.233));
+  filter: grayscale(.9)
 }
 
-.menu img:active {
-    width: 100px;
-    transform: translate(-2px, -2px);
-    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.233));
+.folder {
+  display: inline-block;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
 }
 
-.container a {
-    transition: .2s;
+.folder p {
+  margin: 0;
 }
 
-.container a:hover {
-    filter: drop-shadow(0 0 5px black);
+.pic {
+  display: inline-block;
+  margin: 5px;
 }
 
-.picture {
-    display: inline-block;
-    margin: 5px;
+.pic img {
+  box-shadow: 0 5px 5px #00000055;
 }
 
 .label {
-    display: flex;
-    font-size: 30px;
-    position: relative;
-    width: 100%;
-}
-
-hr {
-	border: none	;
-    background-color: #00000022;
-    margin: 5px;
-    padding: 1px;
-}
-
-h4,
-h6 {
-    text-align: left;
-    margin: 5px;
-}
-
-.name {
-    font-size: 45px;
-    margin: 0;
-}
-
-.description {
-    grid-area: description;
-    background: radial-gradient(#222, #111);
-    overflow-x: hidden;
-    overflow-y: scroll;
-    text-align: left;
-    border-radius: 10px;
-    font-size: 24px;
-    color: #fff;
-    padding: 24px;
-}
-
-.info {
-    display: inline-block;
-    border: 2px solid #00000022;
-    border-radius: 15px;
-    padding: 20px;
-    font-size: 24px;
-    text-align: left;
-    width: 45%;
-    margin: 5px;
+  font-size: 24px;
+  text-align: center;
+  margin: 5px;
+  position: relative;
 }
 
 /*
+.name {
+  font-size: 45px;
+  margin: 0;
+}
+
+.description {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: left;
+  border-radius: 10px;
+  font-size: 24px;
+  color: #fff;
+  padding: 24px;
+}
+
+.info {
+  display: inline-block;
+  border: 2px solid #00000022;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 24px;
+  text-align: left;
+  width: 45%;
+  margin: 5px;
+}
+*/
+
+/*
 .card {
-    margin: auto;
-    border: 2px solid #00000022;
-    border-radius: 15px;
-    padding: 20px;
-    width: 900px;
-    display: grid;
-    gap: 7px;
-    grid-auto-flow: column;
-    grid-template-columns: auto 15px auto;
-    grid-template-rows: 60px 340px 15px;
-    grid-template-areas:
-        "name vert_decor trophy"
-        "description vert_decor trophy"
-        "hori_decor vert_decor .";
+  margin: auto;
+  border: 2px solid #00000022;
+  border-radius: 15px;
+  padding: 20px;
+  wdth: 900px;
+  display: grid;
+  gap: 7px;
+  grid-auto-flow: column;
+  grid-template-columns: auto 15px auto;
+  grid-template-rows: 60px 340px 15px;
+  grid-template-areas:
+      "name vert_decor trophy"
+      "description vert_decor trophy"
+      "hori_decor vert_decor .";
 }
 
 .hori_decor,
 .vert_decor {
-    background: #00000033;
-    border-radius: 10px;
+  background: #00000033;
+  border-radius: 10px;
 }
 
 .hori_decor {
-    grid-area: hori_decor;
+  grid-area: hori_decor;
 }
 
 .vert_decor {
-    grid-area: vert_decor;
+  grid-area: vert_decor;
 }
 
 #spritesheet {
-    margin: auto;
-    width: 290px;
-    height: 400px;
+  margin: auto;
+  width: 290px;
+  height: 400px;
 }
 
 .trophy {
-    grid-area: trophy;
-    background: radial-gradient(#222, #111);
-    width: 400px;
-    border-radius: 10px;
+  grid-area: trophy;
+  background: radial-gradient(#222, #111);
+  width: 400px;
+  border-radius: 10px;
 }
 .character {
-    border: 2px solid black;
-    border-radius: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
 }
 */
