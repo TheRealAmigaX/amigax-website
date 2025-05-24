@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
 <title>AmigaX's Website</title>
-<link rel="icon" type="image/png" sizes="32x32" href="resources/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon.png">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="title" content="AmigaX's website">
@@ -18,9 +18,15 @@
 </head>
 <body>
 
-<div class="menu" id="menu">
-<a title="Return" draggable="false" href="javascript:history.back()">
-<img draggable="false" src="../resources/return.png" alt="return"></a>
+<div id="modal">
+<img id="close" src="../resources/return.png" onclick="hideImgModal()" draggable="false">
+<div id="modal_img"></div>
+<div id="alt_txt"></div>
+</div>
+
+<div class="menu">
+<a class="icon" title="Back" draggable="false" href="javascript:history.back()">
+<img draggable="false" src="../resources/return.png" alt="Back"></a>
 </div>
 
 <div class="container">

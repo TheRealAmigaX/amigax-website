@@ -26,7 +26,7 @@ hr {
   padding: 1px;
 }
 
-p {
+p, ul, ol {
   font-size: 20pt;
 }
 
@@ -88,28 +88,25 @@ footer {
   border-image: url(resources/windowActive.png) 55 round;
 }
 
-.menu {
-  text-align: center;
-}
-
 .menu img {
   width: 128px;
-  margin-right: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.menu img:hover {
-  filter: grayscale(.9)
-}
-
-.folder {
+.icon {
   display: inline-block;
   color: #000;
   text-align: center;
   text-decoration: none;
 }
 
-.folder p {
+.icon p {
   margin: 0;
+}
+
+.icon:hover {
+  filter: grayscale(.8)
 }
 
 .pic {
